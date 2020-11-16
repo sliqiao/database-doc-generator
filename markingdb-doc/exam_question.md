@@ -1,0 +1,42 @@
+# 此处只用于答题卡的标识制作。答案a、b、c主要用于试卷题目内容一致，但选型打乱了这类的卷子。这是一个递归的结构，大题下面可以有大题，多级下分。(exam_question)
+| 列名   | 类型   | KEY  | 可否为空 | 注释   |
+| ---- | ---- | ---- | ---- | ---- |
+|que_id|int8||否|题目编号，题组是几道题一起批改，就像大题的概念|
+|que_name|varchar||是|null|
+|pap_id|int8||否|试卷编号|
+|que_start|int4||否|null|
+|que_end|int4||否|null|
+|num_que|int4||否|null|
+|que_type|int8||否|题型：系统编码，枚举|
+|is_testlet|int4||否|null|
+|parent_que_id|int8||否|null|
+|is_auto|int8||否|自动批改：1客观题、0主观题|
+|is_choose|int4||否|null|
+|que_type_user|int8||否|null|
+|len_sec|int8||否|时长|
+|score|numeric||否|分值|
+|subject_id|int8||否|null|
+|answer_a|varchar||否|正确答案A
+给题目相同，答案不同的AB卷用|
+|answer_b|varchar||否|null|
+|answer_c|varchar||否|预留|
+|rule_detail|varchar||否|null|
+|rule_mul_right|varchar||否|中间以分号隔开，1；2；3表示对一个得一分，对2个得2分，3个及以上得3分|
+|rule_mul_error|varchar||否|中间以分号隔开，1；2；3表示错一个扣一分，错2个扣2分，错3个及以上扣3分|
+|rule_mul_miss|varchar||否|中间以分号隔开，1；2；3表示漏一个扣一分，漏2个扣2分，漏3个及以上扣3分|
+|num_ans|int4||否|对于多选题，有几个答题填几个|
+|num_res|int4||否|如果有，就需要去资源表BAS_REC_BUSI查询所需的图片显示|
+|status|int4||否|null|
+|update_time|timestamp||否|null|
+|que_group|varchar||是|null|
+|que_choose_num|int4||是|null|
+|rule_mul|int4||是|null|
+|option_score|varchar||是|null|
+|num_limit|int4||是|null|
+|level|int8||是|难度|
+|oral_ans_audio_url|varchar||是|null|
+|oral_ans_time|int4||是|null|
+|option_print_style|int4||是|null|
+|zj_que_id|int8||是|组卷pap_id|
+|is_integration|int4||是|null|
+|tk_que_id|int8||是|null|
